@@ -1,0 +1,2022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lerato Pooe · Portfolio of Evidence</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #001E50;
+    --paper: #f4f7fc;
+    --cream: #e8eef8;
+    --gold: #FF1EB4;
+    --gold-light: #ff7ed4;
+    --rust: #1226BB;
+    --sage: #3CDBC0;
+    --slate: #00A3E0;
+    --muted: #5a6e8c;
+    --border: #c8d4e8;
+    --white: #ffffff;
+    --month1: #FF1EB4;
+    --month2: #3CDBC0;
+    --month3: #00A3E0;
+    --month4: #1226BB;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 2.5rem 3rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    border: 40px solid rgba(255,30,180,0.15);
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 40%;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    border: 25px solid rgba(0,163,224,0.12);
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+  .header-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--paper);
+  }
+  .header-title {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #ff7ed4;
+    margin-top: 0.4rem;
+    font-weight: 500;
+  }
+  .header-meta {
+    text-align: right;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .header-meta span { color: var(--gold-light); }
+  .progress-bar-wrap {
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .progress-label span { color: var(--gold-light); }
+  .progress-track {
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FF1EB4, #00A3E0);
+    border-radius: 3px;
+    transition: width 0.6s ease;
+  }
+
+  /* ── TABS ── */
+  .tabs {
+    display: flex;
+    gap: 0;
+    background: var(--cream);
+    border-bottom: 2px solid var(--border);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    white-space: nowrap;
+    transition: all 0.2s;
+    border-radius: 0;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+  .tab:hover { color: #001E50; }
+  .tab.active {
+    color: var(--ink);
+    border-bottom-color: #FF1EB4;
+  }
+
+  /* ── CONTENT ── */
+  .content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* ── MONTH HEADER ── */
+  .month-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .month-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+  .month-info h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    color: var(--ink);
+  }
+  .month-info p {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+    line-height: 1.5;
+  }
+  .month-progress {
+    margin-left: auto;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .month-progress .pct {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    line-height: 1;
+  }
+  .month-progress .pct-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── MILESTONE CARDS ── */
+  .milestones { display: flex; flex-direction: column; gap: 0.75rem; }
+  .milestone-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .milestone-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .milestone-card.done { border-left: 4px solid #3CDBC0; }
+  .milestone-card.in-progress { border-left: 4px solid #FF1EB4; }
+  .milestone-card.not-started { border-left: 4px solid var(--border); }
+  .milestone-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
+    cursor: pointer;
+    user-select: none;
+  }
+  .milestone-check {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .milestone-check.done { background: #3CDBC0; border-color: #3CDBC0; color: white; }
+  .milestone-check.in-progress { background: #FF1EB4; border-color: #FF1EB4; color: white; font-size: 0.65rem; }
+  .milestone-title {
+    flex: 1;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .milestone-title.done { text-decoration: line-through; color: var(--muted); }
+  .status-pill {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+  }
+  .pill-done { background: #d6faf4; color: #1a9980; }
+  .pill-progress { background: #fce4f4; color: #c4007a; }
+  .pill-pending { background: var(--cream); color: var(--muted); }
+  .milestone-toggle {
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-left: 0.5rem;
+  }
+  .milestone-body {
+    display: none;
+    padding: 0 1rem 1rem;
+    border-top: 1px solid var(--cream);
+  }
+  .milestone-body.open { display: block; }
+  .body-section { margin-top: 1rem; }
+  .body-section label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FF1EB4;
+    margin-bottom: 0.4rem;
+  }
+  .body-section textarea, .body-section input[type="text"] {
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.83rem;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.6rem 0.8rem;
+    resize: vertical;
+    min-height: 70px;
+    line-height: 1.5;
+    transition: border-color 0.2s;
+  }
+  .body-section input[type="text"] { min-height: unset; }
+  .body-section textarea:focus, .body-section input[type="text"]:focus {
+    outline: none;
+    border-color: #FF1EB4;
+  }
+  .sub-checks { display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.2rem; }
+  .sub-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--slate);
+    cursor: pointer;
+  }
+  .sub-check input[type="checkbox"] {
+    margin-top: 2px;
+    accent-color: #FF1EB4;
+    flex-shrink: 0;
+  }
+  .sub-check span.checked { text-decoration: line-through; color: var(--muted); }
+  .status-select {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.2rem;
+  }
+  .status-btn {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
+    background: none;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--muted);
+  }
+  .status-btn:hover { border-color: #FF1EB4; color: #FF1EB4; }
+  .status-btn.sel-done { border-color: #3CDBC0; background: #d6faf4; color: #1a9980; }
+  .status-btn.sel-progress { border-color: #FF1EB4; background: #fce4f4; color: #c4007a; }
+  .status-btn.sel-pending { border-color: var(--border); background: var(--cream); color: var(--muted); }
+
+  /* ── SECTION DIVIDER ── */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .section-divider h3 {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── LOG ENTRIES (Reading/People/Insights) ── */
+  .log-section { margin-top: 0; }
+  .log-entry-list { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; }
+  .log-entry {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-size: 0.83rem;
+    color: var(--ink);
+    position: relative;
+    line-height: 1.5;
+  }
+  .log-entry .log-meta {
+    font-size: 0.68rem;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    margin-bottom: 0.25rem;
+  }
+  .log-entry .del-btn {
+    position: absolute;
+    top: 0.5rem; right: 0.75rem;
+    background: none;
+    border: none;
+    color: var(--border);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .log-entry .del-btn:hover { color: #FF1EB4; }
+  .log-type-badge {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+  }
+  .badge-read { background: #dff4fb; color: #007ab5; }
+  .badge-person { background: #dffaf5; color: #1a9980; }
+  .badge-insight { background: #fce4f4; color: #c4007a; }
+  .log-add-form {
+    background: var(--white);
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
+  .log-add-form .form-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .log-add-form select, .log-add-form input, .log-add-form textarea {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    background: var(--paper);
+    transition: border-color 0.2s;
+  }
+  .log-add-form select:focus, .log-add-form input:focus, .log-add-form textarea:focus {
+    outline: none;
+    border-color: #FF1EB4;
+  }
+  .log-add-form select { flex-shrink: 0; }
+  .log-add-form input { flex: 1; min-width: 180px; }
+  .log-add-form textarea { width: 100%; min-height: 60px; resize: vertical; }
+  .btn-add {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-add:hover { background: #FF1EB4; }
+
+  /* ── DASHBOARD TAB ── */
+  .dash-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .dash-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+  .dash-card .dc-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .dash-card .dc-value {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .dash-card .dc-sub {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+  .dash-card .dc-bar {
+    height: 4px;
+    background: var(--cream);
+    border-radius: 2px;
+    margin-top: 0.75rem;
+    overflow: hidden;
+  }
+  .dash-card .dc-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.6s ease;
+  }
+  .kpi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+  }
+  .kpi-table th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 2px solid var(--border);
+  }
+  .kpi-table td {
+    padding: 0.65rem 0.75rem;
+    border-bottom: 1px solid var(--cream);
+    vertical-align: top;
+    color: var(--ink);
+  }
+  .kpi-table tr:last-child td { border-bottom: none; }
+  .kpi-table tr:hover td { background: var(--paper); }
+  .kpi-dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    margin-right: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  /* ── CHECKIN TAB ── */
+  .checkin-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .checkin-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+  }
+  .checkin-item h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+  }
+  .checkin-item .ci-meta {
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+  .checkin-item textarea {
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.6rem;
+    min-height: 80px;
+    resize: vertical;
+    background: var(--paper);
+  }
+  .checkin-item textarea:focus { outline: none; border-color: #FF1EB4; }
+
+  .ci-field-label {
+    display: block;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0.6rem 0 0.3rem;
+  }
+  .mgr-feedback-block {
+    background: linear-gradient(135deg, #fdf2fa, #f4f7fc);
+    border: 1.5px solid #ffd1ee;
+    border-radius: 6px;
+    padding: 0.85rem;
+    margin-top: 0.75rem;
+  }
+  .mgr-label { color: #c4007a; margin-top: 0; }
+  .mgr-textarea {
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    color: var(--ink);
+    border: 1px solid #ffd1ee;
+    border-radius: 4px;
+    padding: 0.6rem;
+    min-height: 75px;
+    resize: vertical;
+    background: var(--white);
+  }
+  .mgr-textarea:focus { outline: none; border-color: #FF1EB4; }
+  .mgr-rating-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+  }
+  .mgr-rating-select {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--ink);
+    border: 1px solid #ffd1ee;
+    border-radius: 4px;
+    padding: 0.35rem 0.6rem;
+    background: var(--white);
+  }
+  .mgr-rating-select:focus { outline: none; border-color: #FF1EB4; }
+  .ci-done { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--muted); margin-top: 0.5rem; cursor: pointer; }
+  .ci-done input { accent-color: #FF1EB4; }
+
+  /* ── EMPTY STATE ── */
+  .empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    margin-top: 0.5rem;
+  }
+  .empty-state .es-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+  /* ── SAVE INDICATOR ── */
+  #save-indicator {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: var(--ink);
+    color: var(--paper);
+    font-size: 0.72rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-family: 'DM Mono', monospace;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 100;
+  }
+  #save-indicator.show { opacity: 1; }
+
+
+  /* ── FOLLOW-UP / TO-DO ── */
+  .todo-add-form {
+    background: var(--white);
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .todo-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+  .todo-row input, .todo-row select, .todo-row textarea {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    background: var(--paper);
+    transition: border-color 0.2s;
+  }
+  .todo-row input:focus, .todo-row select:focus, .todo-row textarea:focus {
+    outline: none; border-color: #FF1EB4;
+  }
+  .todo-row input.todo-title { flex: 1; min-width: 200px; }
+  .todo-row textarea { width: 100%; min-height: 60px; resize: vertical; }
+  .todo-filters {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    align-items: center;
+  }
+  .todo-filter-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .todo-filter-btn:hover { border-color: #FF1EB4; color: #FF1EB4; }
+  .todo-filter-btn.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
+  .todo-list { display: flex; flex-direction: column; gap: 0.6rem; }
+  .todo-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    display: flex;
+    gap: 0.85rem;
+    align-items: flex-start;
+    transition: box-shadow 0.15s;
+    position: relative;
+  }
+  .todo-card:hover { box-shadow: 0 2px 10px rgba(0,30,80,0.07); }
+  .todo-card.done-card { opacity: 0.55; }
+  .todo-card.done-card .todo-card-title { text-decoration: line-through; color: var(--muted); }
+  .todo-check-btn {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: none;
+    flex-shrink: 0;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem;
+    color: transparent;
+    transition: all 0.2s;
+    margin-top: 1px;
+  }
+  .todo-check-btn:hover { border-color: #3CDBC0; color: #3CDBC0; }
+  .todo-check-btn.checked { background: #3CDBC0; border-color: #3CDBC0; color: white; }
+  .todo-card-body { flex: 1; }
+  .todo-card-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 0.2rem;
+  }
+  .todo-card-notes {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 0.35rem;
+  }
+  .todo-card-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .todo-type-pill {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+  }
+  .tp-question   { background: #fce4f4; color: #c4007a; }
+  .tp-todo       { background: #e0e6ff; color: #1226BB; }
+  .tp-followup   { background: #dff4fb; color: #007ab5; }
+  .tp-reminder   { background: #fff8e1; color: #b8860b; }
+  .todo-source-tag {
+    font-size: 0.65rem;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+  }
+  .todo-due {
+    font-size: 0.65rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--muted);
+  }
+  .todo-due.overdue { color: #b84c2b; font-weight: 600; }
+  .todo-card-actions {
+    display: flex; gap: 0.3rem;
+    opacity: 0;
+    transition: opacity 0.15s;
+    flex-shrink: 0;
+  }
+  .todo-card:hover .todo-card-actions { opacity: 1; }
+  .todo-act-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--muted);
+    transition: all 0.15s;
+  }
+  .todo-act-btn:hover { border-color: #FF1EB4; color: #FF1EB4; }
+  .todo-act-btn.del:hover { border-color: #c00; color: #c00; }
+  .todo-stats {
+    display: flex; gap: 1.25rem; flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .todo-stat {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .todo-stat span { color: var(--ink); font-family: 'DM Mono', monospace; }
+  .todo-section-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FF1EB4;
+    margin-bottom: 0.35rem;
+    display: block;
+  }
+
+  /* Edit modal for todos */
+  #todo-modal .modal-overlay { z-index: 210; }
+
+  @media (max-width: 600px) {
+    header { padding: 1.5rem 1rem; }
+    .header-name { font-size: 1.7rem; }
+    .content { padding: 1rem 0.75rem 3rem; }
+    .month-header { flex-direction: column; gap: 0.75rem; }
+    .month-progress { margin-left: 0; text-align: left; }
+    .dash-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── LOG ENTRY ACTIONS ── */
+  .log-entry-actions {
+    position: absolute;
+    top: 0.5rem; right: 0.5rem;
+    display: flex;
+    gap: 0.3rem;
+    opacity: 0;
+    transition: opacity 0.15s;
+  }
+  .log-entry:hover .log-entry-actions { opacity: 1; }
+  .edit-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.15s;
+  }
+  .edit-btn:hover { border-color: #FF1EB4; color: #FF1EB4; background: #fce4f4; }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26,23,20,0.55);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: var(--white);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+    overflow: hidden;
+  }
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--paper);
+  }
+  .modal-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.05rem;
+    color: var(--ink);
+  }
+  .modal-close {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.1rem 0.3rem;
+    transition: color 0.15s;
+  }
+  .modal-close:hover { color: var(--rust); }
+  .modal-body { padding: 1.25rem; }
+  .modal-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .modal-field { display: flex; flex-direction: column; flex: 1; min-width: 140px; }
+  .modal-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FF1EB4;
+    margin-bottom: 0.35rem;
+  }
+  .modal-select, .modal-input, .modal-textarea {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.83rem;
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.55rem 0.75rem;
+    background: var(--paper);
+    transition: border-color 0.2s;
+  }
+  .modal-select:focus, .modal-input:focus, .modal-textarea:focus {
+    outline: none; border-color: #FF1EB4;
+  }
+  .modal-textarea { min-height: 90px; resize: vertical; width: 100%; }
+  .modal-input { width: 100%; }
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    padding: 0.9rem 1.25rem;
+    border-top: 1px solid var(--border);
+    background: var(--paper);
+  }
+  .btn-cancel {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    background: none;
+    border: 1.5px solid var(--border);
+    color: var(--muted);
+    border-radius: 4px;
+    padding: 0.5rem 1.1rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-cancel:hover { border-color: #001E50; color: #001E50; }
+
+  /* ── BACKUP BAR ── */
+  .backup-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    position: relative;
+    z-index: 1;
+  }
+  .backup-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    background: rgba(255,255,255,0.08);
+    color: var(--paper);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 0.4rem 0.95rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .backup-btn:hover { background: #FF1EB4; border-color: #FF1EB4; color: white; }
+  .backup-hint {
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div>
+      <div class="header-name">Lerato Pooe</div>
+      <div class="header-title">Portfolio of Evidence &nbsp;·&nbsp; Senior Government Partnerships Manager</div>
+    </div>
+    <div class="header-meta">
+      Reports to: <span>Ayanda Mtsatse</span><br>
+      Provinces: <span>Gauteng · Mpumalanga</span><br>
+      Probation: <span>4 months</span>
+    </div>
+  </div>
+  <div class="backup-bar">
+    <button class="backup-btn" onclick="exportData()">⬇ Download Backup</button>
+    <button class="backup-btn" onclick="document.getElementById('import-file-input').click()">⬆ Restore Backup</button>
+    <input type="file" id="import-file-input" accept="application/json" style="display:none" onchange="importData(event)">
+    <span class="backup-hint">Save a backup file regularly — your data lives only in this browser</span>
+  </div>
+  <div class="progress-bar-wrap">
+    <div class="progress-label">
+      <span>Overall probation progress</span>
+      <span id="overall-pct">0%</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="overall-bar" style="width:0%"></div>
+    </div>
+  </div>
+</header>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('dashboard')">Dashboard</button>
+  <button class="tab" onclick="switchTab('month1')">Month 1 · Days 1–30</button>
+  <button class="tab" onclick="switchTab('month2')">Month 2 · Days 31–60</button>
+  <button class="tab" onclick="switchTab('month3')">Month 3 · Days 61–90</button>
+  <button class="tab" onclick="switchTab('month4')">Month 4 · Days 91–120</button>
+  <button class="tab" onclick="switchTab('log')">Evidence Log</button>
+  <button class="tab" onclick="switchTab('checkins')">Check-ins</button>
+  <button class="tab" onclick="switchTab('followup')">Follow-ups &amp; To-Dos</button>
+</div>
+
+<!-- ══════════ DASHBOARD ══════════ -->
+<div class="content">
+<div class="panel active" id="panel-dashboard">
+  <div class="dash-grid" id="dash-grid"></div>
+
+  <div class="section-divider"><h3>KPI Framework Tracker</h3></div>
+  <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:2rem;">
+    <table class="kpi-table">
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Self-Rating</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody id="kpi-tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="section-divider"><h3>Recent Evidence</h3></div>
+  <div id="recent-log"></div>
+</div>
+
+<!-- ══════════ MONTH 1 ══════════ -->
+<div class="panel" id="panel-month1">
+  <div class="month-header">
+    <div class="month-badge" style="background:var(--month1)">1</div>
+    <div class="month-info">
+      <h2>Days 1–30 · Learn Enough to Represent Click</h2>
+      <p>Build programme fluency, understand the government landscape, master the pitch deck, and begin internal capacity-building. Nothing external until the pitch deck is signed off by Ayanda and COO.</p>
+    </div>
+    <div class="month-progress">
+      <div class="pct" id="m1-pct" style="color:var(--month1)">0%</div>
+      <div class="pct-label">complete</div>
+    </div>
+  </div>
+
+  <div class="milestones" id="m1-milestones"></div>
+  <div class="section-divider"><h3>Reading Log — Month 1</h3></div>
+  <div class="log-section" id="log-m1-read"></div>
+  <div class="section-divider"><h3>People Engaged — Month 1</h3></div>
+  <div class="log-section" id="log-m1-people"></div>
+  <div class="section-divider"><h3>Insights & Reflections — Month 1</h3></div>
+  <div class="log-section" id="log-m1-insights"></div>
+</div>
+
+<!-- ══════════ MONTH 2 ══════════ -->
+<div class="panel" id="panel-month2">
+  <div class="month-header">
+    <div class="month-badge" style="background:var(--month2)">2</div>
+    <div class="month-info">
+      <h2>Days 31–60 · Map the Landscape, Begin the Turnaround</h2>
+      <p>Map Gauteng and Mpumalanga stakeholders from the ground up. Begin the Gauteng turnaround campaign. Facilitate first COPs. Finalise internal templates.</p>
+    </div>
+    <div class="month-progress">
+      <div class="pct" id="m2-pct" style="color:var(--month2)">0%</div>
+      <div class="pct-label">complete</div>
+    </div>
+  </div>
+
+  <div class="milestones" id="m2-milestones"></div>
+  <div class="section-divider"><h3>Reading Log — Month 2</h3></div>
+  <div class="log-section" id="log-m2-read"></div>
+  <div class="section-divider"><h3>People Engaged — Month 2</h3></div>
+  <div class="log-section" id="log-m2-people"></div>
+  <div class="section-divider"><h3>Insights & Reflections — Month 2</h3></div>
+  <div class="log-section" id="log-m2-insights"></div>
+</div>
+
+<!-- ══════════ MONTH 3 ══════════ -->
+<div class="panel" id="panel-month3">
+  <div class="month-header">
+    <div class="month-badge" style="background:var(--month3)">3</div>
+    <div class="month-info">
+      <h2>Days 61–90 · Own the Relationships, Drive the Work</h2>
+      <p>Lead GP and MP independently. Ekurhuleni North is priority. First external pitch delivery. Day 90 scenario assessment — core probation milestone.</p>
+    </div>
+    <div class="month-progress">
+      <div class="pct" id="m3-pct" style="color:var(--month3)">0%</div>
+      <div class="pct-label">complete</div>
+    </div>
+  </div>
+
+  <div class="milestones" id="m3-milestones"></div>
+  <div class="section-divider"><h3>Reading Log — Month 3</h3></div>
+  <div class="log-section" id="log-m3-read"></div>
+  <div class="section-divider"><h3>People Engaged — Month 3</h3></div>
+  <div class="log-section" id="log-m3-people"></div>
+  <div class="section-divider"><h3>Insights & Reflections — Month 3</h3></div>
+  <div class="log-section" id="log-m3-insights"></div>
+</div>
+
+<!-- ══════════ MONTH 4 ══════════ -->
+<div class="panel" id="panel-month4">
+  <div class="month-header">
+    <div class="month-badge" style="background:var(--month4)">4</div>
+    <div class="month-info">
+      <h2>Days 91–120 · Deliver and Plan the Next Six Months</h2>
+      <p>Full GP and MP ownership. Drive two projects. Present impact at senior level. Deliver six-month forward plan. Begin financial sustainability contributions. Formal probation review.</p>
+    </div>
+    <div class="month-progress">
+      <div class="pct" id="m4-pct" style="color:var(--month4)">0%</div>
+      <div class="pct-label">complete</div>
+    </div>
+  </div>
+
+  <div class="milestones" id="m4-milestones"></div>
+  <div class="section-divider"><h3>Reading Log — Month 4</h3></div>
+  <div class="log-section" id="log-m4-read"></div>
+  <div class="section-divider"><h3>People Engaged — Month 4</h3></div>
+  <div class="log-section" id="log-m4-people"></div>
+  <div class="section-divider"><h3>Insights & Reflections — Month 4</h3></div>
+  <div class="log-section" id="log-m4-insights"></div>
+</div>
+
+<!-- ══════════ EVIDENCE LOG ══════════ -->
+<div class="panel" id="panel-log">
+  <div class="month-header" style="background:var(--white)">
+    <div class="month-badge" style="background:var(--ink)">✦</div>
+    <div class="month-info">
+      <h2>Full Evidence Log</h2>
+      <p>Add any reading completed, person engaged, or insight gained across your probation period. All entries are stored locally in your browser.</p>
+    </div>
+  </div>
+  <div class="log-add-form">
+    <div class="form-row">
+      <select id="log-type">
+        <option value="read">📄 Document / Resource Read</option>
+        <option value="person">👤 Person Engaged</option>
+        <option value="insight">💡 Insight / Reflection</option>
+      </select>
+      <select id="log-month">
+        <option value="m1">Month 1</option>
+        <option value="m2">Month 2</option>
+        <option value="m3">Month 3</option>
+        <option value="m4">Month 4</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <input type="text" id="log-title" placeholder="Title / Name / Heading…" />
+    </div>
+    <textarea id="log-notes" placeholder="Notes, key takeaways, or context…"></textarea>
+    <div style="margin-top:0.5rem">
+      <button class="btn-add" onclick="addLogEntry()">+ Add Entry</button>
+    </div>
+  </div>
+  <div id="all-log-list" style="margin-top:1rem;display:flex;flex-direction:column;gap:0.5rem;"></div>
+</div>
+
+<!-- ══════════ CHECK-INS ══════════ -->
+<div class="panel" id="panel-checkins">
+  <div class="month-header" style="background:var(--white)">
+    <div class="month-badge" style="background:var(--ink)">◎</div>
+    <div class="month-info">
+      <h2>Check-in & Review Structure</h2>
+      <p>Log notes for each scheduled review. Weekly check-ins alternate between delivery review and workshopping. Month-end reviews are formal and go on file.</p>
+    </div>
+  </div>
+  <div class="checkin-list" id="checkin-list"></div>
+</div>
+
+
+<!-- ══════════ FOLLOW-UPS & TO-DOS ══════════ -->
+<div class="panel" id="panel-followup">
+  <div class="month-header" style="background:var(--white)">
+    <div class="month-badge" style="background:linear-gradient(135deg,#FF1EB4,#1226BB)">✓</div>
+    <div class="month-info">
+      <h2>Follow-ups &amp; To-Dos</h2>
+      <p>Capture questions, actions, and follow-ups as they arise — from insights, meetings, documents, or conversations. Tag each item by type and source so nothing slips through.</p>
+    </div>
+    <div class="month-progress">
+      <div class="pct" id="todo-pct" style="color:#FF1EB4">0%</div>
+      <div class="pct-label">resolved</div>
+    </div>
+  </div>
+
+  <!-- Add form -->
+  <div class="todo-add-form">
+    <div class="todo-row">
+      <select id="todo-type" style="flex-shrink:0">
+        <option value="question">❓ Question to Answer</option>
+        <option value="followup">🔁 Follow-up Required</option>
+        <option value="todo">✅ To-Do / Action</option>
+        <option value="reminder">🔔 Reminder</option>
+      </select>
+      <select id="todo-month" style="flex-shrink:0">
+        <option value="m1">Month 1</option>
+        <option value="m2">Month 2</option>
+        <option value="m3">Month 3</option>
+        <option value="m4">Month 4</option>
+        <option value="general">General</option>
+      </select>
+      <select id="todo-source" style="flex-shrink:0">
+        <option value="insight">💡 From Insight</option>
+        <option value="meeting">🤝 From Meeting</option>
+        <option value="document">📄 From Document</option>
+        <option value="school-visit">🏫 From School Visit</option>
+        <option value="conversation">💬 From Conversation</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="todo-row">
+      <input type="text" id="todo-title" class="todo-title" placeholder="What is the question, action, or follow-up?…">
+      <input type="date" id="todo-due" title="Due date (optional)" style="flex-shrink:0">
+    </div>
+    <div class="todo-row">
+      <textarea id="todo-notes" placeholder="Context, background, who to ask, why it matters…"></textarea>
+    </div>
+    <div class="todo-row" style="justify-content:space-between;align-items:center">
+      <label style="font-size:0.75rem;color:var(--muted);display:flex;align-items:center;gap:0.35rem;cursor:pointer">
+        <input type="checkbox" id="todo-priority" style="accent-color:#FF1EB4"> <span>Mark as priority</span>
+      </label>
+      <button class="btn-add" onclick="addTodo()">+ Add Item</button>
+    </div>
+  </div>
+
+  <!-- Stats + filters -->
+  <div class="todo-stats" id="todo-stats"></div>
+  <div class="todo-filters" id="todo-filters">
+    <button class="todo-filter-btn active" data-tf="all" onclick="setTodoFilter('all',this)">All</button>
+    <button class="todo-filter-btn" data-tf="open" onclick="setTodoFilter('open',this)">Open</button>
+    <button class="todo-filter-btn" data-tf="done" onclick="setTodoFilter('done',this)">Resolved</button>
+    <button class="todo-filter-btn" data-tf="priority" onclick="setTodoFilter('priority',this)">⭐ Priority</button>
+    <button class="todo-filter-btn" data-tf="question" onclick="setTodoFilter('question',this)">Questions</button>
+    <button class="todo-filter-btn" data-tf="followup" onclick="setTodoFilter('followup',this)">Follow-ups</button>
+    <button class="todo-filter-btn" data-tf="todo" onclick="setTodoFilter('todo',this)">To-Dos</button>
+    <button class="todo-filter-btn" data-tf="reminder" onclick="setTodoFilter('reminder',this)">Reminders</button>
+  </div>
+
+  <div class="todo-list" id="todo-list"></div>
+</div>
+
+<!-- TODO EDIT MODAL -->
+<div id="todo-modal" class="modal-overlay" onclick="if(event.target===this)closeTodoModal()">
+  <div class="modal-box">
+    <div class="modal-header">
+      <span class="modal-title">Edit Item</span>
+      <button class="modal-close" onclick="closeTodoModal()">&#x2715;</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="tedit-id">
+      <div class="form-row">
+        <div class="form-field">
+          <label class="form-label">Type</label>
+          <select id="tedit-type" class="form-select">
+            <option value="question">❓ Question to Answer</option>
+            <option value="followup">🔁 Follow-up Required</option>
+            <option value="todo">✅ To-Do / Action</option>
+            <option value="reminder">🔔 Reminder</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Month</label>
+          <select id="tedit-month" class="form-select">
+            <option value="m1">Month 1</option>
+            <option value="m2">Month 2</option>
+            <option value="m3">Month 3</option>
+            <option value="m4">Month 4</option>
+            <option value="general">General</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label class="form-label">Source</label>
+          <select id="tedit-source" class="form-select">
+            <option value="insight">💡 From Insight</option>
+            <option value="meeting">🤝 From Meeting</option>
+            <option value="document">📄 From Document</option>
+            <option value="school-visit">🏫 From School Visit</option>
+            <option value="conversation">💬 From Conversation</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Due Date</label>
+          <input type="date" id="tedit-due" class="form-input">
+        </div>
+      </div>
+      <div class="form-field" style="margin-bottom:0.75rem">
+        <label class="form-label">Item</label>
+        <input type="text" id="tedit-title" class="form-input" placeholder="Question, action, or follow-up…">
+      </div>
+      <div class="form-field" style="margin-bottom:0.75rem">
+        <label class="form-label">Notes / Context</label>
+        <textarea id="tedit-notes" class="form-textarea" placeholder="Context, background, who to ask…"></textarea>
+      </div>
+      <label style="font-size:0.75rem;color:var(--muted);display:flex;align-items:center;gap:0.4rem;cursor:pointer">
+        <input type="checkbox" id="tedit-priority" style="accent-color:#FF1EB4"> <span>Priority item</span>
+      </label>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeTodoModal()">Cancel</button>
+      <button class="btn-save" onclick="saveTodoEdit()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+</div><!-- /content -->
+
+<div id="save-indicator">Saved ✓</div>
+
+<script>
+// ── DATA MODEL ──
+const MILESTONES = {
+  m1: [
+    { id:'m1_1', title:'HR Onboarding completed', subchecks:['HR forms signed','IT access granted','Meet team members'] },
+    { id:'m1_2', title:'Full document library walkthrough with Ayanda', subchecks:['Board packs reviewed','Long-term strategy reviewed','Training decks reviewed','M&E results reviewed','Province-specific materials reviewed'] },
+    { id:'m1_3', title:'Matific and eQuiz completed as a learner', subchecks:['Matific walkthrough done','eQuiz walkthrough done'] },
+    { id:'m1_4', title:'Four school visits attended with Programme Lead', subchecks:['Visit 1 documented','Visit 2 documented','Visit 3 documented','Visit 4 documented'] },
+    { id:'m1_5', title:'One district engagement attended as observer', subchecks:['Notes taken','Debrief with Ayanda completed'] },
+    { id:'m1_6', title:'Previous 1–2 years government correspondence reviewed', subchecks:['Engagement reports reviewed','Correspondence files reviewed'] },
+    { id:'m1_7', title:'CAPS Foundation Phase and one ATP studied', subchecks:['CAPS Foundation Phase read','One Annual Teaching Plan reviewed'] },
+    { id:'m1_8', title:'Acronym & terminology glossary started', subchecks:['Education terms captured','Click internal language captured','Government titles captured'] },
+    { id:'m1_9', title:'Click government pitch deck mastered', subchecks:['Pitch studied','Pitch presented back to Ayanda','Pitch signed off by Ayanda','Pitch signed off by COO'] },
+    { id:'m1_10', title:'All key internal stakeholders met', subchecks:['HOI EC met','HOI GP met','HOI MP met','HOI WC met','Special Projects Lead met','Head of Ed-Tech / M&E met'] },
+    { id:'m1_11', title:'Draft government communication templates produced', subchecks:['Meeting process guidelines drafted','Template shared with Ayanda for review'] },
+    { id:'m1_12', title:'HOI engagement framework outlined', subchecks:[] },
+    { id:'m1_13', title:'EC shadow: Introduced to min. 3 ECDoE contacts', subchecks:['Contact 1 met','Contact 2 met','Contact 3 met'] },
+    { id:'m1_14', title:'EC context brief produced in own words', subchecks:['BCM pilot context captured','PSSC / DIC terms of reference reviewed'] },
+  ],
+  m2: [
+    { id:'m2_1', title:'Gauteng stakeholder map completed', subchecks:['Provincial level mapped','District level mapped','Relationship health RAG rated','Cold relationships identified'] },
+    { id:'m2_2', title:'Gauteng turnaround strategy submitted to Ayanda', subchecks:['Ekurhuleni North identified as priority','Outreach to Ekurhuleni North initiated','Strategy document submitted'] },
+    { id:'m2_3', title:'Minimum one COP facilitated in Gauteng', subchecks:['COP date confirmed','COP facilitated','Findings documented','Findings fed into GP strategy'] },
+    { id:'m2_4', title:'Mpumalanga engagement plan (draft) produced', subchecks:['Relationship context reviewed','Curriculum & e-Learning Director role understood'] },
+    { id:'m2_5', title:'First Mpumalanga engagement completed with Ayanda', subchecks:['Attended engagement','Direct relationships begun at provincial director level','District level relationships begun'] },
+    { id:'m2_6', title:'Minimum one COP facilitated in Mpumalanga', subchecks:['COP facilitated with Nick','Findings documented'] },
+    { id:'m2_7', title:'MP intensives participation confirmed with Nick', subchecks:['Intensives schedule reviewed','Active participation in at least one intensive'] },
+    { id:'m2_8', title:'Government communication templates finalised and shared with HOIs', subchecks:['Templates finalised','Shared with all HOIs','Uptake tracking begun'] },
+    { id:'m2_9', title:'PMT process documentation produced', subchecks:['PMT timelines documented','Province process documented','District process documented'] },
+    { id:'m2_10', title:'EC tasks: product understanding session logistics supported', subchecks:['Champion group coordination supported','Documentation completed'] },
+    { id:'m2_11', title:'Direct relationship begun with District CES in BCM', subchecks:['Introduced by Ayanda','Follow-up communication sent','Communication documented'] },
+    { id:'m2_12', title:'30-day formal check-in documented and filed', subchecks:['Check-in held','Notes filed'] },
+    { id:'m2_13', title:'Participated in first PSSC or DIC meeting', subchecks:['Meeting attended','Meeting notes produced','Action log produced'] },
+  ],
+  m3: [
+    { id:'m3_1', title:'Minimum 2 structured GP engagements led (Ayanda not in room)', subchecks:['Engagement 1 led and documented','Engagement 2 led and documented'] },
+    { id:'m3_2', title:'Ekurhuleni North engagement producing measurable progress', subchecks:['Progress metric defined','Progress documented'] },
+    { id:'m3_3', title:'Gauteng engagement plan submitted and signed off by Ayanda', subchecks:['APP alignment pathway included','Plan submitted','Ayanda sign-off received'] },
+    { id:'m3_4', title:'At least one GP project actively moving', subchecks:['Project identified (e.g. Incentives programme)','Project milestones documented','Active movement confirmed'] },
+    { id:'m3_5', title:'First Mpumalanga district forum convened and documented', subchecks:['Forum date set','Ayanda available as shadow','Forum notes produced'] },
+    { id:'m3_6', title:'MP: DDG Planning relationship established', subchecks:['Meeting held','Notes documented'] },
+    { id:'m3_7', title:'Click pitch delivered externally for first time', subchecks:['Audience confirmed','COO sign-off obtained before delivery','Pitch delivered without in-meeting Ayanda support','Ayanda feedback documented'] },
+    { id:'m3_8', title:'District health analysis completed — all GP and MP districts', subchecks:['Active engagement time assessed','Issue resolution rates assessed','Communication quality assessed','Findings shared with Ayanda','Findings shared with COO'] },
+    { id:'m3_9', title:'Day 90 scenario assessment completed', subchecks:['Assessment scheduled with Ayanda','4–6 scenarios assessed','Own province strategic read presented unprompted','Written notes retained on file'] },
+    { id:'m3_10', title:'GR systems fully owned — meeting log, stakeholder DB, calendar', subchecks:['Meeting log current','Stakeholder database current','Engagement calendar current (GP + MP)'] },
+    { id:'m3_11', title:'First independently authored provincial update produced', subchecks:['Report drafted','Quality reviewed by Ayanda','Approved'] },
+  ],
+  m4: [
+    { id:'m4_1', title:'All scheduled GP and MP engagements delivered independently', subchecks:['All GP engagements delivered','All MP engagements delivered','Relationship milestones achieved'] },
+    { id:'m4_2', title:'Incentives programme actively progressing', subchecks:['Milestones documented','Active movement confirmed'] },
+    { id:'m4_3', title:'Second GP-specific project agreed and actively progressing', subchecks:['Project agreed with Ayanda and COO','Milestones documented','Active movement confirmed'] },
+    { id:'m4_4', title:'Impact presentation delivered to senior leadership', subchecks:['Presentation prepared','COO sign-off obtained','Covers relationship health / project progress / wins / risks','Presentation delivered'] },
+    { id:'m4_5', title:'Six-month forward plan for GP and MP produced', subchecks:['Relationship targets included','Project pipeline included','APP alignment pathway included','Government funding pathways included','Reviewed by Ayanda','Presented to COO','Approved for execution'] },
+    { id:'m4_6', title:'APP alignment conversation initiated (one province)', subchecks:['Province confirmed','Education Planner engaged','Session initiated with Ayanda'] },
+    { id:'m4_7', title:'Cost-sharing framework draft contributed', subchecks:['AGSA knowledge applied','Co-developed with Ayanda and CFO','Draft produced'] },
+    { id:'m4_8', title:'120-day formal probation review', subchecks:['Review held with Ayanda, COO, HR','KPI framework assessed','Self-assessment produced','Decision documented'] },
+    { id:'m4_9', title:'Self-assessment produced for 120-day review', subchecks:['Learnings documented','Growth areas documented','Gaps / needs identified','Biggest risks listed','Biggest opportunities listed'] },
+  ]
+};
+
+const CHECKINS = [
+  { id:'ci_w2', title:'Week 2 – Delivery Review', meta:'Odd week · Track progress, review outputs, surface blockers' },
+  { id:'ci_w4', title:'Week 4 – Workshopping', meta:'Even week · Go deep on one scenario or relationship challenge' },
+  { id:'ci_m1', title:'Month 1 (Day 30) — Formal Review', meta:'Documented & filed · Pitch sign-off milestone' },
+  { id:'ci_w6', title:'Week 6 – Delivery Review', meta:'Odd week · Track progress' },
+  { id:'ci_w8', title:'Week 8 – Workshopping', meta:'Even week · Workshop' },
+  { id:'ci_m2', title:'Month 2 (Day 60) — Formal Review', meta:'Documented & filed · Turnaround campaign assessment' },
+  { id:'ci_w10', title:'Week 10 – Delivery Review', meta:'Odd week' },
+  { id:'ci_w12', title:'Week 12 – Workshopping', meta:'Even week' },
+  { id:'ci_d90', title:'Day 90 — Scenario Assessment ★', meta:'Core probation milestone · 4–6 real GR scenarios · Written notes on file' },
+  { id:'ci_m3', title:'Month 3 (Day 90) — Formal Review', meta:'Documented & filed · District health analysis baseline' },
+  { id:'ci_w14', title:'Week 14 – Delivery Review', meta:'Odd week' },
+  { id:'ci_w16', title:'Week 16 – Workshopping', meta:'Even week' },
+  { id:'ci_m4', title:'Month 4 (Day 120) — Formal Probation Review', meta:'Ayanda + COO + HR · KPI framework, Day 90 outcome, qualitative assessment' },
+];
+
+const KPI_DIMENSIONS = [
+  { id:'kpi1', name:'Programme & Sector Fluency', desc:'Can explain Click programmes, CAPS, ATP, M&E results without prompting' },
+  { id:'kpi2', name:'Government Relationship Health', desc:'GP and MP relationships progressing: engagement time, issue resolution, communication quality' },
+  { id:'kpi3', name:'Delivery & Ownership', desc:'Tasks delivered on time, risks flagged proactively, GR systems current' },
+  { id:'kpi4', name:'Project Delivery', desc:'Incentives + GP project actively moving — driving, not just reporting' },
+  { id:'kpi5', name:'Strategic Thinking & Judgement', desc:'Read government situations accurately; boundary / extortion / repair scenarios' },
+];
+
+// ── STATE ──
+let state = {};
+
+function loadState() {
+  try {
+    state = JSON.parse(localStorage.getItem('lerato_portfolio_v2') || '{}');
+  } catch(e) { state = {}; }
+  if (!state.milestones) state.milestones = {};
+  if (!state.notes) state.notes = {};
+  if (!state.log) state.log = [];
+  if (!state.checkins) state.checkins = {};
+  if (!state.kpi) state.kpi = {};
+}
+
+function saveState() {
+  localStorage.setItem('lerato_portfolio_v2', JSON.stringify(state));
+  const ind = document.getElementById('save-indicator');
+  ind.classList.add('show');
+  clearTimeout(ind._t);
+  ind._t = setTimeout(() => ind.classList.remove('show'), 1500);
+}
+
+// ── BACKUP: EXPORT / IMPORT ──
+function exportData() {
+  const payload = {
+    app: 'lerato_portfolio_tracker',
+    exportedAt: new Date().toISOString(),
+    state: state
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  const dateStr = new Date().toISOString().slice(0,10);
+  a.href = url;
+  a.download = `lerato-probation-backup-${dateStr}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function importData(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const parsed = JSON.parse(e.target.result);
+      const incoming = parsed.state || parsed; // tolerate raw state JSON too
+      if (!incoming || typeof incoming !== 'object') throw new Error('Invalid file format');
+      const proceed = confirm('This will replace all current data in this tracker with the contents of the backup file. Continue?');
+      if (!proceed) { event.target.value = ''; return; }
+      state = incoming;
+      if (!state.milestones) state.milestones = {};
+      if (!state.notes) state.notes = {};
+      if (!state.log) state.log = [];
+      if (!state.checkins) state.checkins = {};
+      if (!state.kpi) state.kpi = {};
+      if (!state.todos) state.todos = [];
+      saveState();
+      // re-render everything
+      ['m1','m2','m3','m4'].forEach((m,i) => renderMilestones(m, `m${i+1}-milestones`));
+      renderAllMonthLogs();
+      renderAllLog();
+      renderCheckins();
+      updateProgress();
+      updateDashboard();
+      renderTodos();
+      alert('Backup restored successfully.');
+    } catch (err) {
+      alert('Could not read this file. Please make sure you selected a valid backup JSON file exported from this tracker.');
+    }
+    event.target.value = '';
+  };
+  reader.readAsText(file);
+}
+
+// ── RENDER ──
+function getMilestoneStatus(id) {
+  return state.milestones[id]?.status || 'pending';
+}
+
+function renderMilestones(month, containerId) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  MILESTONES[month].forEach(m => {
+    const status = getMilestoneStatus(m.id);
+    const card = document.createElement('div');
+    card.className = `milestone-card ${status === 'done' ? 'done' : status === 'in-progress' ? 'in-progress' : 'not-started'}`;
+    card.id = 'card_' + m.id;
+
+    const subChecksHtml = m.subchecks.length ? `
+      <div class="body-section">
+        <label>Completion Checklist</label>
+        <div class="sub-checks">
+          ${m.subchecks.map((s,i) => {
+            const checked = state.milestones[m.id]?.subchecks?.[i] || false;
+            return `<label class="sub-check">
+              <input type="checkbox" ${checked ? 'checked' : ''} onchange="toggleSubcheck('${m.id}',${i},this.checked)">
+              <span class="${checked ? 'checked' : ''}">${s}</span>
+            </label>`;
+          }).join('')}
+        </div>
+      </div>` : '';
+
+    const notes = state.notes[m.id + '_notes'] || '';
+    const evidence = state.notes[m.id + '_evidence'] || '';
+
+    card.innerHTML = `
+      <div class="milestone-header" onclick="toggleMilestoneBody('${m.id}')">
+        <div class="milestone-check ${status === 'done' ? 'done' : status === 'in-progress' ? 'in-progress' : ''}" onclick="event.stopPropagation();cycleStatus('${m.id}')">
+          ${status === 'done' ? '✓' : status === 'in-progress' ? '▷' : ''}
+        </div>
+        <div class="milestone-title ${status === 'done' ? 'done' : ''}">${m.title}</div>
+        <span class="status-pill ${status === 'done' ? 'pill-done' : status === 'in-progress' ? 'pill-progress' : 'pill-pending'}">
+          ${status === 'done' ? 'Done' : status === 'in-progress' ? 'In Progress' : 'Pending'}
+        </span>
+        <span class="milestone-toggle">▾</span>
+      </div>
+      <div class="milestone-body" id="body_${m.id}">
+        <div class="body-section" style="margin-top:0.75rem">
+          <label>Status</label>
+          <div class="status-select">
+            <button class="status-btn ${status==='pending'?'sel-pending':''}" onclick="setStatus('${m.id}','pending')">Pending</button>
+            <button class="status-btn ${status==='in-progress'?'sel-progress':''}" onclick="setStatus('${m.id}','in-progress')">In Progress</button>
+            <button class="status-btn ${status==='done'?'sel-done':''}" onclick="setStatus('${m.id}','done')">Done</button>
+          </div>
+        </div>
+        ${subChecksHtml}
+        <div class="body-section">
+          <label>Notes & Context</label>
+          <textarea placeholder="Add your notes, context, observations…" onchange="saveNotes('${m.id}_notes',this.value)">${notes}</textarea>
+        </div>
+        <div class="body-section">
+          <label>Evidence / Outputs</label>
+          <textarea placeholder="Document links, file names, email references, meeting dates…" onchange="saveNotes('${m.id}_evidence',this.value)">${evidence}</textarea>
+        </div>
+      </div>`;
+    container.appendChild(card);
+  });
+}
+
+function toggleMilestoneBody(id) {
+  const body = document.getElementById('body_' + id);
+  body.classList.toggle('open');
+}
+
+function cycleStatus(id) {
+  const s = getMilestoneStatus(id);
+  const next = s === 'pending' ? 'in-progress' : s === 'in-progress' ? 'done' : 'pending';
+  setStatus(id, next);
+}
+
+function setStatus(id, status) {
+  if (!state.milestones[id]) state.milestones[id] = {};
+  state.milestones[id].status = status;
+  saveState();
+  // re-render the milestone card
+  const month = id.split('_')[0];
+  renderMilestones(month, month + '-milestones');
+  updateProgress();
+  updateDashboard();
+if (!state.todos) state.todos = [];
+renderTodos();
+}
+
+function toggleSubcheck(milestoneId, idx, checked) {
+  if (!state.milestones[milestoneId]) state.milestones[milestoneId] = {};
+  if (!state.milestones[milestoneId].subchecks) state.milestones[milestoneId].subchecks = {};
+  state.milestones[milestoneId].subchecks[idx] = checked;
+  saveState();
+}
+
+function saveNotes(key, value) {
+  state.notes[key] = value;
+  saveState();
+}
+
+// ── LOG ──
+function renderLogSection(containerId, type, month) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  const entries = state.log.filter(e => e.type === type && e.month === month);
+  container.innerHTML = `
+    <div class="log-entry-list">
+      ${entries.length ? entries.map(e => logEntryHtml(e)).join('') : `<div class="empty-state"><div class="es-icon">${type==='read'?'📄':type==='person'?'👤':'💡'}</div>No entries yet — add from the Evidence Log tab</div>`}
+    </div>`;
+}
+
+function logEntryHtml(e) {
+  return `<div class="log-entry">
+    <div class="log-meta"><span class="log-type-badge ${e.type==='read'?'badge-read':e.type==='person'?'badge-person':'badge-insight'}">${e.type==='read'?'Read':e.type==='person'?'Person':'Insight'}</span>${e.date}</div>
+    <strong>${e.title}</strong>${e.notes ? `<br><span style="color:var(--muted)">${e.notes}</span>` : ''}
+    <div class="log-entry-actions">
+      <button class="edit-btn" onclick="openEditModal('${e.id}')">✎ Edit</button>
+      <button class="del-btn" onclick="deleteLogEntry('${e.id}')">✕</button>
+    </div>
+  </div>`;
+}
+
+function openEditModal(id) {
+  const entry = state.log.find(e => e.id === id);
+  if (!entry) return;
+  document.getElementById('edit-id').value = id;
+  document.getElementById('edit-type').value = entry.type;
+  document.getElementById('edit-month').value = entry.month;
+  document.getElementById('edit-title').value = entry.title;
+  document.getElementById('edit-notes').value = entry.notes || '';
+  document.getElementById('edit-modal').classList.add('open');
+}
+
+function closeEditModal() {
+  document.getElementById('edit-modal').classList.remove('open');
+}
+
+function saveEditEntry() {
+  const id = document.getElementById('edit-id').value;
+  const idx = state.log.findIndex(e => e.id === id);
+  if (idx === -1) return;
+  state.log[idx].type  = document.getElementById('edit-type').value;
+  state.log[idx].month = document.getElementById('edit-month').value;
+  state.log[idx].title = document.getElementById('edit-title').value.trim();
+  state.log[idx].notes = document.getElementById('edit-notes').value.trim();
+  saveState();
+  closeEditModal();
+  renderAllLog();
+  renderAllMonthLogs();
+  updateDashboard();
+}
+
+function addLogEntry() {
+  const type = document.getElementById('log-type').value;
+  const month = document.getElementById('log-month').value;
+  const title = document.getElementById('log-title').value.trim();
+  const notes = document.getElementById('log-notes').value.trim();
+  if (!title) { document.getElementById('log-title').focus(); return; }
+  const entry = { id: Date.now().toString(), type, month, title, notes, date: new Date().toLocaleDateString('en-ZA',{day:'2-digit',month:'short',year:'numeric'}) };
+  state.log.unshift(entry);
+  saveState();
+  document.getElementById('log-title').value = '';
+  document.getElementById('log-notes').value = '';
+  renderAllLog();
+  renderAllMonthLogs();
+  updateDashboard();
+}
+
+function deleteLogEntry(id) {
+  state.log = state.log.filter(e => e.id !== id);
+  saveState();
+  renderAllLog();
+  renderAllMonthLogs();
+  updateDashboard();
+}
+
+function renderAllLog() {
+  const container = document.getElementById('all-log-list');
+  if (!state.log.length) {
+    container.innerHTML = `<div class="empty-state"><div class="es-icon">📋</div>No entries yet. Add your first entry above.</div>`;
+    return;
+  }
+  container.innerHTML = state.log.map(e => logEntryHtml(e)).join('');
+}
+
+function renderAllMonthLogs() {
+  ['m1','m2','m3','m4'].forEach(m => {
+    renderLogSection(`log-${m}-read`, 'read', m);
+    renderLogSection(`log-${m}-people`, 'person', m);
+    renderLogSection(`log-${m}-insights`, 'insight', m);
+  });
+}
+
+// ── CHECK-INS ──
+function renderCheckins() {
+  const container = document.getElementById('checkin-list');
+  container.innerHTML = CHECKINS.map(ci => {
+    const notes = state.checkins[ci.id + '_notes'] || '';
+    const done = state.checkins[ci.id + '_done'] || false;
+    const mgrFeedback = state.checkins[ci.id + '_mgrfeedback'] || '';
+    const mgrRating = state.checkins[ci.id + '_mgrrating'] || '';
+    return `<div class="checkin-item" style="${done ? 'opacity:0.6' : ''}">
+      <h3>${ci.title}</h3>
+      <div class="ci-meta">${ci.meta}</div>
+      <label class="ci-field-label">My Notes</label>
+      <textarea placeholder="Notes, outcomes, actions agreed, blockers raised…" onchange="saveNotes('checkin_${ci.id}_notes',this.value)">${notes}</textarea>
+
+      <div class="mgr-feedback-block">
+        <label class="ci-field-label mgr-label">📋 Line Manager Feedback</label>
+        <textarea class="mgr-textarea" placeholder="What did Ayanda say in this check-in? Strengths noted, areas to improve, specific guidance given…" onchange="saveNotes('checkin_${ci.id}_mgrfeedback',this.value)">${mgrFeedback}</textarea>
+        <div class="mgr-rating-row">
+          <label class="ci-field-label mgr-label" style="margin-bottom:0">Manager's Overall Rating</label>
+          <select class="mgr-rating-select" onchange="saveNotes('checkin_${ci.id}_mgrrating',this.value)">
+            <option value="" ${!mgrRating?'selected':''}>—</option>
+            <option value="exceeding" ${mgrRating==='exceeding'?'selected':''}>Exceeding Expectations</option>
+            <option value="ontrack" ${mgrRating==='ontrack'?'selected':''}>On Track</option>
+            <option value="developing" ${mgrRating==='developing'?'selected':''}>Developing</option>
+            <option value="concern" ${mgrRating==='concern'?'selected':''}>Needs Attention</option>
+          </select>
+        </div>
+      </div>
+
+      <label class="ci-done">
+        <input type="checkbox" ${done?'checked':''} onchange="toggleCheckinDone('${ci.id}',this.checked)">
+        Mark as completed
+      </label>
+    </div>`;
+  }).join('');
+}
+
+function toggleCheckinDone(id, val) {
+  state.checkins[id + '_done'] = val;
+  saveState();
+  renderCheckins();
+}
+
+// ── PROGRESS ──
+function countProgress(month) {
+  const total = MILESTONES[month].length;
+  const done = MILESTONES[month].filter(m => getMilestoneStatus(m.id) === 'done').length;
+  const inprog = MILESTONES[month].filter(m => getMilestoneStatus(m.id) === 'in-progress').length;
+  return { total, done, inprog, pct: total ? Math.round((done / total) * 100) : 0 };
+}
+
+function updateProgress() {
+  let totalDone = 0, totalAll = 0;
+  ['m1','m2','m3','m4'].forEach((m, i) => {
+    const p = countProgress(m);
+    totalDone += p.done;
+    totalAll += p.total;
+    const el = document.getElementById(`m${i+1}-pct`);
+    if (el) el.textContent = p.pct + '%';
+  });
+  const overallPct = totalAll ? Math.round((totalDone / totalAll) * 100) : 0;
+  document.getElementById('overall-pct').textContent = overallPct + '%';
+  document.getElementById('overall-bar').style.width = overallPct + '%';
+}
+
+// ── DASHBOARD ──
+function updateDashboard() {
+  const grid = document.getElementById('dash-grid');
+  const allMilestones = Object.values(MILESTONES).flat();
+  const totalDone = allMilestones.filter(m => getMilestoneStatus(m.id) === 'done').length;
+  const totalInProg = allMilestones.filter(m => getMilestoneStatus(m.id) === 'in-progress').length;
+  const logRead = state.log.filter(e => e.type === 'read').length;
+  const logPeople = state.log.filter(e => e.type === 'person').length;
+  const logInsights = state.log.filter(e => e.type === 'insight').length;
+
+  grid.innerHTML = [
+    { label:'Milestones Complete', value: totalDone, sub:`of ${allMilestones.length} total`, pct: Math.round(totalDone/allMilestones.length*100), color:'var(--sage)' },
+    { label:'In Progress', value: totalInProg, sub:'milestones underway', pct: Math.round(totalInProg/allMilestones.length*100), color:'var(--gold)' },
+    { label:'Documents Read', value: logRead, sub:'resources logged', pct: Math.min(logRead*5,100), color:'var(--month3)' },
+    { label:'People Engaged', value: logPeople, sub:'stakeholders logged', pct: Math.min(logPeople*4,100), color:'var(--month2)' },
+    { label:'Insights Captured', value: logInsights, sub:'reflections logged', pct: Math.min(logInsights*5,100), color:'var(--month4)' },
+    { label:'Check-ins Done', value: CHECKINS.filter(ci => state.checkins[ci.id+'_done']).length, sub:`of ${CHECKINS.length} scheduled`, pct: Math.round(CHECKINS.filter(ci=>state.checkins[ci.id+'_done']).length/CHECKINS.length*100), color:'var(--rust)' },
+  ].map(d => `
+    <div class="dash-card">
+      <div class="dc-label">${d.label}</div>
+      <div class="dc-value">${d.value}</div>
+      <div class="dc-sub">${d.sub}</div>
+      <div class="dc-bar"><div class="dc-fill" style="width:${d.pct}%;background:${d.color}"></div></div>
+    </div>`).join('');
+
+  // KPI table
+  const tbody = document.getElementById('kpi-tbody');
+  tbody.innerHTML = KPI_DIMENSIONS.map(k => {
+    const rating = state.kpi[k.id + '_rating'] || '';
+    const notes = state.kpi[k.id + '_notes'] || '';
+    const dotColor = rating === '5' ? 'var(--sage)' : rating === '4' ? '#7ab87c' : rating === '3' ? 'var(--gold)' : rating === '2' ? '#e0903a' : rating === '1' ? 'var(--rust)' : 'var(--border)';
+    return `<tr>
+      <td><strong>${k.name}</strong><br><span style="color:var(--muted);font-size:0.76rem">${k.desc}</span></td>
+      <td style="width:120px">
+        <select style="font-size:0.78rem;padding:0.2rem 0.4rem;border:1px solid var(--border);border-radius:4px;background:var(--paper);font-family:'DM Sans',sans-serif" onchange="saveKpi('${k.id}_rating',this.value)">
+          <option value="" ${!rating?'selected':''}>—</option>
+          <option value="1" ${rating==='1'?'selected':''}>1 · Needs Work</option>
+          <option value="2" ${rating==='2'?'selected':''}>2 · Developing</option>
+          <option value="3" ${rating==='3'?'selected':''}>3 · On Track</option>
+          <option value="4" ${rating==='4'?'selected':''}>4 · Strong</option>
+          <option value="5" ${rating==='5'?'selected':''}>5 · Excellent</option>
+        </select>
+      </td>
+      <td><input type="text" style="width:100%;font-size:0.78rem;padding:0.2rem 0.4rem;border:1px solid var(--border);border-radius:4px;background:var(--paper);font-family:'DM Sans',sans-serif" placeholder="Notes…" value="${notes}" onchange="saveKpi('${k.id}_notes',this.value)"></td>
+    </tr>`;
+  }).join('');
+
+  // Recent log
+  const recent = document.getElementById('recent-log');
+  const recentEntries = state.log.slice(0, 5);
+  recent.innerHTML = recentEntries.length ? `<div style="display:flex;flex-direction:column;gap:0.5rem">${recentEntries.map(e => logEntryHtml(e)).join('')}</div>` :
+    `<div class="empty-state"><div class="es-icon">📋</div>No evidence logged yet — head to the Evidence Log tab to start.</div>`;
+}
+
+function saveKpi(key, value) {
+  state.kpi[key] = value;
+  saveState();
+}
+
+// ── TABS ──
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+
+
+// ══════════ FOLLOW-UPS & TO-DOS ══════════
+let todoFilter = 'all';
+
+function addTodo() {
+  const title = document.getElementById('todo-title').value.trim();
+  if (!title) { document.getElementById('todo-title').focus(); return; }
+  const item = {
+    id:       Date.now().toString(),
+    type:     document.getElementById('todo-type').value,
+    month:    document.getElementById('todo-month').value,
+    source:   document.getElementById('todo-source').value,
+    title,
+    notes:    document.getElementById('todo-notes').value.trim(),
+    due:      document.getElementById('todo-due').value,
+    priority: document.getElementById('todo-priority').checked,
+    done:     false,
+    created:  new Date().toLocaleDateString('en-ZA',{day:'2-digit',month:'short',year:'numeric'}),
+  };
+  if (!state.todos) state.todos = [];
+  state.todos.unshift(item);
+  saveState();
+  // clear form
+  document.getElementById('todo-title').value = '';
+  document.getElementById('todo-notes').value = '';
+  document.getElementById('todo-due').value = '';
+  document.getElementById('todo-priority').checked = false;
+  renderTodos();
+}
+
+function setTodoFilter(f, btn) {
+  todoFilter = f;
+  document.querySelectorAll('.todo-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderTodos();
+}
+
+function getTodoFiltered() {
+  if (!state.todos) return [];
+  return state.todos.filter(t => {
+    if (todoFilter === 'all')      return true;
+    if (todoFilter === 'open')     return !t.done;
+    if (todoFilter === 'done')     return t.done;
+    if (todoFilter === 'priority') return t.priority && !t.done;
+    return t.type === todoFilter;
+  }).sort((a,b) => {
+    // priority first, then undone, then by date
+    if (a.priority && !b.priority) return -1;
+    if (!a.priority && b.priority) return 1;
+    if (!a.done && b.done) return -1;
+    if (a.done && !b.done) return 1;
+    return 0;
+  });
+}
+
+function renderTodos() {
+  if (!state.todos) state.todos = [];
+  const all = state.todos;
+  const open = all.filter(t => !t.done).length;
+  const done = all.filter(t => t.done).length;
+  const priority = all.filter(t => t.priority && !t.done).length;
+
+  // stats
+  document.getElementById('todo-stats').innerHTML = `
+    <div class="todo-stat">Total: <span>${all.length}</span></div>
+    <div class="todo-stat">Open: <span>${open}</span></div>
+    <div class="todo-stat">Resolved: <span>${done}</span></div>
+    <div class="todo-stat">Priority: <span>${priority}</span></div>
+  `;
+
+  // pct
+  const pct = all.length ? Math.round((done / all.length) * 100) : 0;
+  const pctEl = document.getElementById('todo-pct');
+  if (pctEl) pctEl.textContent = pct + '%';
+
+  const filtered = getTodoFiltered();
+  const list = document.getElementById('todo-list');
+
+  if (!filtered.length) {
+    list.innerHTML = `<div class="empty-state"><div class="es-icon">✅</div><p>${todoFilter === 'all' ? 'No items yet — add your first question or to-do above.' : 'No items in this filter.'}</p></div>`;
+    return;
+  }
+
+  const typeLabels   = { question:'Question', followup:'Follow-up', todo:'To-Do', reminder:'Reminder' };
+  const typeClasses  = { question:'tp-question', followup:'tp-followup', todo:'tp-todo', reminder:'tp-reminder' };
+  const sourceLabels = { insight:'💡 Insight', meeting:'🤝 Meeting', document:'📄 Document', 'school-visit':'🏫 School Visit', conversation:'💬 Conversation', other:'Other' };
+  const monthLabels  = { m1:'Month 1', m2:'Month 2', m3:'Month 3', m4:'Month 4', general:'General' };
+
+  const today = new Date(); today.setHours(0,0,0,0);
+
+  list.innerHTML = filtered.map(t => {
+    let dueHtml = '';
+    if (t.due) {
+      const d = new Date(t.due);
+      const overdue = !t.done && d < today;
+      dueHtml = `<span class="todo-due ${overdue?'overdue':''}">${overdue?'⚠ Overdue · ':'Due · '}${d.toLocaleDateString('en-ZA',{day:'2-digit',month:'short',year:'numeric'})}</span>`;
+    }
+    return `<div class="todo-card ${t.done?'done-card':''}" id="todo-${t.id}">
+      <button class="todo-check-btn ${t.done?'checked':''}" onclick="toggleTodoDone('${t.id}')" title="${t.done?'Mark open':'Mark resolved'}">${t.done?'✓':''}</button>
+      <div class="todo-card-body">
+        <div class="todo-card-title">${t.priority && !t.done ? '⭐ ' : ''}${escHtmlT(t.title)}</div>
+        ${t.notes ? `<div class="todo-card-notes">${escHtmlT(t.notes)}</div>` : ''}
+        <div class="todo-card-meta">
+          <span class="todo-type-pill ${typeClasses[t.type]}">${typeLabels[t.type]}</span>
+          <span class="todo-source-tag">${sourceLabels[t.source] || t.source}</span>
+          <span class="todo-source-tag">· ${monthLabels[t.month]}</span>
+          ${dueHtml}
+          <span class="todo-source-tag">· Added ${t.created}</span>
+        </div>
+      </div>
+      <div class="todo-card-actions">
+        <button class="todo-act-btn" onclick="openTodoModal('${t.id}')">✎ Edit</button>
+        <button class="todo-act-btn del" onclick="deleteTodo('${t.id}')">✕</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function escHtmlT(str) {
+  return (str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function toggleTodoDone(id) {
+  if (!state.todos) return;
+  const t = state.todos.find(x => x.id === id);
+  if (t) { t.done = !t.done; saveState(); renderTodos(); updateDashboard(); }
+}
+
+function deleteTodo(id) {
+  if (!confirm('Remove this item?')) return;
+  state.todos = (state.todos || []).filter(t => t.id !== id);
+  saveState(); renderTodos(); updateDashboard();
+}
+
+function openTodoModal(id) {
+  const t = (state.todos || []).find(x => x.id === id);
+  if (!t) return;
+  document.getElementById('tedit-id').value       = id;
+  document.getElementById('tedit-type').value     = t.type;
+  document.getElementById('tedit-month').value    = t.month;
+  document.getElementById('tedit-source').value   = t.source;
+  document.getElementById('tedit-title').value    = t.title;
+  document.getElementById('tedit-notes').value    = t.notes || '';
+  document.getElementById('tedit-due').value      = t.due || '';
+  document.getElementById('tedit-priority').checked = t.priority || false;
+  document.getElementById('todo-modal').classList.add('open');
+}
+
+function closeTodoModal() {
+  document.getElementById('todo-modal').classList.remove('open');
+}
+
+function saveTodoEdit() {
+  const id  = document.getElementById('tedit-id').value;
+  const idx = (state.todos || []).findIndex(t => t.id === id);
+  if (idx === -1) return;
+  state.todos[idx].type     = document.getElementById('tedit-type').value;
+  state.todos[idx].month    = document.getElementById('tedit-month').value;
+  state.todos[idx].source   = document.getElementById('tedit-source').value;
+  state.todos[idx].title    = document.getElementById('tedit-title').value.trim();
+  state.todos[idx].notes    = document.getElementById('tedit-notes').value.trim();
+  state.todos[idx].due      = document.getElementById('tedit-due').value;
+  state.todos[idx].priority = document.getElementById('tedit-priority').checked;
+  saveState(); closeTodoModal(); renderTodos();
+}
+
+// ── INIT ──
+loadState();
+['m1','m2','m3','m4'].forEach((m,i) => renderMilestones(m, `m${i+1}-milestones`));
+renderAllMonthLogs();
+renderAllLog();
+renderCheckins();
+updateProgress();
+updateDashboard();
+</script>
+
+<!-- ── EDIT MODAL ── -->
+<div id="edit-modal" class="modal-overlay" onclick="if(event.target===this)closeEditModal()">
+  <div class="modal-box">
+    <div class="modal-header">
+      <span class="modal-title">Edit Log Entry</span>
+      <button class="modal-close" onclick="closeEditModal()">&#x2715;</button>
+    </div>
+    <input type="hidden" id="edit-id">
+    <div class="modal-body">
+      <div class="modal-row">
+        <div class="modal-field">
+          <label class="modal-label">Type</label>
+          <select id="edit-type" class="modal-select">
+            <option value="read">Document / Resource Read</option>
+            <option value="person">Person Engaged</option>
+            <option value="insight">Insight / Reflection</option>
+          </select>
+        </div>
+        <div class="modal-field">
+          <label class="modal-label">Month</label>
+          <select id="edit-month" class="modal-select">
+            <option value="m1">Month 1</option>
+            <option value="m2">Month 2</option>
+            <option value="m3">Month 3</option>
+            <option value="m4">Month 4</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-field" style="margin-top:0.75rem">
+        <label class="modal-label">Title / Name</label>
+        <input type="text" id="edit-title" class="modal-input" placeholder="Title or name...">
+      </div>
+      <div class="modal-field" style="margin-top:0.75rem">
+        <label class="modal-label">Notes</label>
+        <textarea id="edit-notes" class="modal-textarea" placeholder="Notes, key takeaways, or context..."></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeEditModal()">Cancel</button>
+      <button class="btn-add" onclick="saveEditEntry()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

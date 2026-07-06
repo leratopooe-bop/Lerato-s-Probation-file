@@ -1,0 +1,278 @@
+{
+  "app": "lerato_portfolio_tracker",
+  "exportedAt": "2026-07-03T14:02:35.918Z",
+  "state": {
+    "milestones": {
+      "m1_1": {
+        "status": "done",
+        "subchecks": {
+          "0": true,
+          "1": true,
+          "2": true
+        }
+      },
+      "m1_3": {
+        "status": "in-progress",
+        "subchecks": {
+          "0": true
+        }
+      },
+      "m1_4": {
+        "status": "in-progress",
+        "subchecks": {
+          "0": true,
+          "1": true,
+          "2": true
+        }
+      },
+      "m1_5": {
+        "subchecks": {
+          "0": true,
+          "1": true
+        },
+        "status": "done"
+      },
+      "m1_8": {
+        "status": "done",
+        "subchecks": {
+          "0": true,
+          "1": true,
+          "2": true
+        }
+      },
+      "m1_10": {
+        "status": "done",
+        "subchecks": {
+          "0": true,
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true
+        }
+      },
+      "m1_7": {
+        "status": "done",
+        "subchecks": {
+          "0": true,
+          "1": true
+        }
+      },
+      "m2_2": {
+        "subchecks": {
+          "0": true,
+          "1": true,
+          "2": true
+        },
+        "status": "done"
+      },
+      "m2_7": {
+        "subchecks": {
+          "0": true
+        },
+        "status": "in-progress"
+      },
+      "m1_2": {
+        "subchecks": {
+          "1": true,
+          "2": true
+        },
+        "status": "in-progress"
+      }
+    },
+    "notes": {
+      "m1_1_notes": "Laptop was a loan. Laptop provided 15 June. \nSim card needs to be connected. ",
+      "m1_3_notes": "Access to programmes shared.\nWalked through Grade 7 Matific as a learner. Experienced how programme moves to higher levels, rewards/acknowledges right answers and corrects and gives opportunities when responses are wrong. \n\nMet with Tshego who talked me through eQuiz. Strategic intent, What it tests, when it is done.\nDiscussed with EGRA & EGNA. Comfortable with the information it provides and how that information can be used. Need to see Click's external reporting on how we report on progress of the programme. ",
+      "m1_3_evidence": "Met Tshego 17 June 2026 - talked through the programmes and the assessment tools. ",
+      "m1_4_notes": "Visit to 2 ES schools that are not performing well (usage).\nChallenges at the schools electricity, timetabling mainly for Intesen & educators not being convinced. \nSchool visits indicated key item:\n\nWhat educators requested:\n- reports indicating the impact on performance of learners\n- what the programme covers and it's alignment to CAPs\n\nEducator training will be done to ensure they are comfortable with the alignment to CAPS.\nWhile the programme mapping to CAPS is being approved share what the programme includes e.g. peak one covers letters A - E phonetically.\nFacilitators need a forum to share ideas and ways of making it interactive and enjoyable for the learners. Facilitators are a big contributor to the success of the programme.\nPrinciples that support the programme also make a big difference. \n\nAkani Primary school in GC district - School performing well driven by the Principle\nPrinciple indicated that the programme is an opportunity for the learners to get exposure to digital learning and although they are playing games they are gaining knowledge and learning through using the tablets and laptops. Stated the opportunity has been shared to the learners and she intends to do the most with the opportunity for the benefit of her learners. ",
+      "m1_4_evidence": "Visits - Thembalethu Primary in Katlehong & Tshwaragano Primary School in Thokoza\nOutput: Engaged with the Head of EdTech on the reporting possibilities to engage teachers on their request\n\n18 June : Akani Primary School\nCAPS mapping to the programme will assist in the concerns of the ATP. \nThe programme outcomes in whether there is a difference in the learner's performance; reading comprehension and numeracy skills is critical in advocating and influencing for dosage. ",
+      "m1_5_notes": "ES district ICT committee",
+      "m1_7_evidence": "Requested the links to these",
+      "m1_5_evidence": "ICT Meeting notes - Ekhurhuleni South\n04/06/2026\n\nGauteng partnership - 11 years\nDirect relationship with the province and aeas on our programme.\nJustification for the double dosage request. More hours in EC test indicated that there is correlation more time spent the more there are improvements in reading comprehension.\n\nChallenges:\nCall to action to the district - power outages & connectivity\n\nFootprint decrease from 31 to 29 What affected the footprint decrease?\nClick at private schools?\n\nDeliberate in servicing under resource schools  Quintile 1 - 3 schools in active provinces.\nSource out products that fit within SA context and deploy to the schools. Therefore there are products used by Click that are deployed by other service providers to other quintile schools. \nTarget time spent on the products 1.5 - 2hrs based on the performance targets. Remediation assistance where there is underperformance  - where there is no remediation (e.g. labs are offline for a number of months) assisting then the partnership is dissolved. Need to report back to funders on the performance of the programme. \n\nLetters sent to principles and not to the districts (districts wree not aware of the process that the letters were issued) schools were calling the districts. Uncomfortable with the letters sent to the schools - district interviewed schools on reason for discomfort on the letters - emanated from the 2hrs required for them to sign, but CAPS timetable do not have the 2hrs and that caused them to drop the programme. Reason to drop that is coming up - Clicks phonics are not in line with what they are teaching and the phonics was meant to be reinforcing. I.e. - the programme is not reinforcing. \n\nGauteng engagement - to implement the 2hr sandbox schools ahd committed to 1 hr. Engaged with schools for the double dosage and they had committed to those hours in 2025. Province requested clarity on the hours and the differences which then yielded resolution to engage with districts on the dosage to stabalise the committed hours. We monitor on the committed dosage per school. Can call a meeting with district on the detail of the letter discomfort - what dosage has each school committed to , what is the performance, where there is underperformance what are the issues and how do we resolve. \n\nClose the learning gaps - sequencing may be covering prior year gaps. Learner led adaptive model based on what the \n\nNeed to create time to discuss the footprint - ES will advise on how to proceed with that. \n",
+      "m2_2_notes": "Shared strategy doc with Ayanda in a meeting on 1 July for her review. ",
+      "m2_2_evidence": "Gauteng strategy presentation",
+      "m2_7_notes": "Intensive planning underway. Engaged Nick 15 June on the engagement requirements to initiate.  Discussed the scheduling with MP HoI Sibu, on 2 July. ",
+      "m1_8_notes": "Glossary will continue throughout probation. ",
+      "m1_8_evidence": "file:///C:/Users/CL0ACB1/Downloads/lerato_glossary%20(2).html ",
+      "checkin_ci_w2_mgrfeedback": "Shared expectation on understanding and that my grasping of the concepts and identification of the issues prevalent was good. ",
+      "checkin_ci_w2_notes": "Engagements with the internal stakeholders has provided a lot of insight. Picked up transversal messaging and pain points in the implementation. Build glossary that has assisted in learning internal jargon. There has been a lot of information to weave together which has been helpful in learning Click.",
+      "checkin_ci_w4_notes": "This week included attending June Jam which was critical to building the language to articulate what Click is about. Great opportunity to build rapport with all internal stakeholders predominately EXCO and the Provincial HoIs and PLs. \nGot exposure to all units of Click and where each function fits. \nExperienced the strategy articulation and the expectations for the Gov Partnerships role. "
+    },
+    "log": [
+      {
+        "id": "1783086693549",
+        "type": "insight",
+        "month": "m1",
+        "title": "Week 1 July",
+        "notes": "Drafted Gauteng strategy for the relationship reset.\nCombined presentation i.e. Government Relations roadmap to be shared with Dylan.\nAyanda established GR steer co with Ayanda & Dylan\n\nTshwane exhibition slides drafted on areas to touch\nMeeting with Rami & Nkateko on Monday to formulate approach and finalise\n\nMP slides will receive from Phillip on Monday\nTo add my input and share with Nick for his inclusion\nNick initiated the online engagement - need date and time to schedule that first one. In that meeting to then schedule the Provincial & District as well as the principles workshop\n\nES confirming the engagement on Monday for Thursday\nApproach for that engagement - to buy in \nConsider who is required to be there. What content is required.\n\nTimelines for each area drafted to be monitored. \n\nMeeting with PLs to reimagine the engagements, what would they need to ensure the ground is laid for certain conversation e.g. dosage, rollovers ect to be in a position to scale.",
+        "date": "03 Jul 2026"
+      },
+      {
+        "id": "1783067523876",
+        "type": "insight",
+        "month": "m1",
+        "title": "One month review",
+        "notes": "Gained much insight on the overall service offering of Click. June Jam was great opportunity to hear first hand the what at the mission truely is, the articulation of the impact and intention to crystallise and make the impact statement succinct. Overview of the operations and the other areas of Click was also insightful. \nGR is main enabler of the strategy going forward and intention of role is clear.",
+        "date": "03 Jul 2026"
+      },
+      {
+        "id": "1782819897824",
+        "type": "person",
+        "month": "m1",
+        "title": "Nomtha - Growth Lead",
+        "notes": "Districts with what the \nGrowth will go into schools and access eagerness and readiness 42 schools and 23 look like quick wins - budget for 220. Reach 1 million learners - moving in the thousands every year. So instead of expanding moving to scale with government.\nStarted looking at what this looks like, what would be needed. how gov would incorporate.\nWork on strategic alignment. Double click endorsed by government - need to have evidence that the programmes are the best - to test assumptions and what is best suited at the grades e.g. reading eggs at gr1 -2 and Amira for grad 3. 2023 double click in EC for literacy and GP for numeracy. Gave them all the resources Growth lead at EC. Consolidation/standerdisation project back to access active schools to ensure the experience at all schools are the same. Fixed the active schools standard e.g. adding labs, laptops - end of 2024 until begin of this year T1. \n\nEC project BCM 20 schools - start off the scaling 100 - 150 in next year. \nGrowth will be the contact for the schools to be implemented. \nWe have not agreed on the dosage for the entry schools - testing the dosage at 4hrs on the programme\nShift. Not agreeing as gov to the hours on dosage - Funders are already on board.",
+        "date": "30 Jun 2026"
+      },
+      {
+        "id": "1782740554513",
+        "type": "person",
+        "month": "m1",
+        "title": "Keagan - Head of Infrastructure",
+        "notes": "Overview on the new schools (growth) process.\nWhat IFS covers from when a new school has been identified and what GR needs to agree with IFS for them to then go in. The number of labs and devices needs to be agreed before IFS does their part of ensuring the school is fully enabled, i.e. structure, devices, security all of which is then provided before handing over to implementation.",
+        "date": "29 Jun 2026"
+      },
+      {
+        "id": "1782740225166",
+        "type": "person",
+        "month": "m1",
+        "title": "Nick - National programme manager",
+        "notes": "Overview of the implementation and how it occurs across. \nDiscussed the stakeholder engagements and the different provinces. \n\nWent through the National Master excel sheet with all the school data. \nGained insight on the work done with Ayanda in implementation.\n\nNick shared the work being done in Gauteng on the current struggling schools and the intended interventions required for the top 3 struggling schools. Agreed to have an engagement/workshop with all HoIs in order to work through what and how provincial interactions have been taking place. \nThis will be a formal structure for engagement between the GR and Implementation for the GR initiatives.",
+        "date": "29 Jun 2026"
+      },
+      {
+        "id": "1782739772041",
+        "type": "person",
+        "month": "m1",
+        "title": "Lisa - WC HoI & Sibulele - MP HoI",
+        "notes": "Both HoIs are fairly new in their roles.\nDiscussed their provinces and how GR will interface with their roles. \n\nWith Sibu she shared on the upcoming intensives.\nHave established fortnightly touch points with Sibu for regularly engaging on the MP environment. \nScheduled to meet on the MP intensives.",
+        "date": "29 Jun 2026"
+      },
+      {
+        "id": "1782739293554",
+        "type": "person",
+        "month": "m1",
+        "title": "Tshego - Research & Innovation",
+        "notes": "Met 17 June\n\nLearner Assessments \n- EQuiz\n- EGRA (Rolls Royce of assessments)\n- EGNA\n- Annual National Assessments\nUniversal prvince testing is expensive\nEGRA is the standard accepted assessment for testing skill. The validity of the test and tried and tested. \n\nEQuiz is inhouse and there is work being done to ensure that the testing domains/testing areas/content areas are testing comparativley to EGRA as well as whether the data is valid from testing digitally as opposed to paper based. \n\nEFRA is subcontracted to data specialists. Is paper based. The assessment has high costs. \nTests skill eg. receptive, Identification, productive, reading comprehension. \n\nIf Equiz is validated to what the EGRA assessment is able to test it will allow Click to:\n- Talk more confidently on the results/outcomes\n- Have a cost effective way of assessing \n- Digitized way of assessing\n- Can provide them with performance results",
+        "date": "29 Jun 2026"
+      },
+      {
+        "id": "1782736512546",
+        "type": "person",
+        "month": "m1",
+        "title": "Eunice - Special Projects lead",
+        "notes": "Direct operations reporting - National reporting\nCompetitions/Incentives to boost performance - Creating & infiltrating to schools driving and implementation - facilitators, monitoring and release of results\nPartner with service providers to drive performance \nInitiated by - HoIs, Eunice, Annual competitions \n\nProjects\nMatific in Xhosa\nWorkshop - Planning & liaising with stakeholders \nDistrict advisors \n\nControl testing process\nIncentivise\nHow often - 13 GP 5 EC\nAug/September - Term 3 \nGrade 2 2023 - 2026 upwards followed them for 3 years \n\nOne facilitator per class as opposed to two.",
+        "date": "29 Jun 2026"
+      },
+      {
+        "id": "1782736237342",
+        "type": "person",
+        "month": "m1",
+        "title": "Sonwabo - EC HoI",
+        "notes": "Relationship with District and province is good. \nCould improve the consistency of engaging - more regular, planned engagements\nWorkshop in April - It was a great initiative where concerns were voiced. Could be good as an Annual workshop\nSubjects advisors relationship is needed to improve the understanding of the programme. They are Influencers for the teachers. Curriculum directorate there is  good relationship, and understanding of the individualised training.  \nGovernment e-learning easy to work with.\n\nAttendees of the Workshop\nDylan, Ayanda, \nSubject advisors\nDistricts \nR&I\n\nProgrammes and scope\nLit & Num programme \nAmira (higher bandwidth - AI) & Mylexia - Double click implementation \nProgramme ran for 3 years and increasing \nBuffalo City\nSara Bartman\nGrahamstown\nCraddock\n\n*Pillars* \nHardware\nStructure (physical)\nConnectivity\nFacilitators\nTimetable (part of the school timetable)\nFixed or Mobile labs\n\nEach learner has a unique learner log in based on their programme. \nStarter test for placing the learner where they are at and they use at their pace. \nTwo facilitators per lab. \n\nTimetable - Roll over exercise (planning doc for the following year) \nRollover discussions with the school. Third term. Principles, SMT, Educators depending. \nDistrict & Province not in rollover conversation. \nSchool & facilitator draft 2hrs per learner per week. - need to get right in making sure the implementation meets targets. \n\n*Challenges*\nWeather keeping kids away\nConnectivity \nPower outages - municipal services low\nZendesk call center ticketing \nTeacher buy-in (certain grades within schools)",
+        "date": "29 Jun 2026"
+      },
+      {
+        "id": "1782735594764",
+        "type": "read",
+        "month": "m1",
+        "title": "MP Intensives proposal",
+        "notes": "Need to implement once Ayanda and Dylan have agreed on the proposed approach.",
+        "date": "29 Jun 2026"
+      },
+      {
+        "id": "1782735496031",
+        "type": "read",
+        "month": "m1",
+        "title": "Click Learning policies",
+        "notes": "Read through all the policies and signed off on the  HR google doc.",
+        "date": "29 Jun 2026"
+      },
+      {
+        "id": "1782735398109",
+        "type": "read",
+        "month": "m1",
+        "title": "Gov Relations strategy",
+        "notes": "Understand the broad strategy overall customised per the provinces. Gauteng and MP being the provinces to lead require Relationship reset and Systems alignment relatively. \nNext initiative for MP are the T3 Intensives - Need to engage with Eunice and Sibu on the intensives. Engagements will need to begin for the workshops to go ahead on 24 July. \nEC I will be supporting the scaling pilot.",
+        "date": "29 Jun 2026"
+      },
+      {
+        "id": "1782735196272",
+        "type": "read",
+        "month": "m1",
+        "title": "Impact and maintenance handbook",
+        "notes": "",
+        "date": "29 Jun 2026"
+      },
+      {
+        "id": "1782734891531",
+        "type": "read",
+        "month": "m1",
+        "title": "Growth process handbook",
+        "notes": "Great insight on Click definitions and the process from when a school needs to be enabled to take on the programme.\nDifferent roles and their responsibilities is clearly set out. Assuming document is still relevant with naming conventions included e.g. RC vs PL.",
+        "date": "29 Jun 2026"
+      },
+      {
+        "id": "1782734679072",
+        "type": "person",
+        "month": "m1",
+        "title": "Rami - Gauteng HoI",
+        "notes": "Shared overall understanding of the Gauteng landscape. What kind of challenges are experienced at schools. Performance of the province based on the usage performance. What the province engagements were previously. ES district had an engagement where the data for ES was shared and Rami ran through the data for my understanding for use in the meeting.",
+        "date": "29 Jun 2026"
+      },
+      {
+        "id": "1782734292054",
+        "type": "person",
+        "month": "m1",
+        "title": "Luyanda - PL",
+        "notes": "Luyanda shared the PL reporting via PowerBI on how the data is presented.\n\nPrinciple feedback forms - sent in prior years to get insights from the principles (pulse check). Need the historical insights. Powerpoint presso on the insights for the principle insights. What came out of the insights to assist with positioning.",
+        "date": "29 Jun 2026"
+      }
+    ],
+    "checkins": {},
+    "kpi": {
+      "kpi1_rating": "3",
+      "kpi2_rating": "4",
+      "kpi3_rating": "5",
+      "kpi4_rating": "4",
+      "kpi5_rating": "5"
+    },
+    "todos": [
+      {
+        "id": "1781859801768",
+        "type": "question",
+        "month": "m1",
+        "source": "conversation",
+        "title": "Who are the responsible people in the CMS structure of Circuits",
+        "notes": "This was in the ES school documents where the info was stratified per the circuits.",
+        "due": "2026-07-04",
+        "priority": false,
+        "done": false,
+        "created": "19 Jun 2026"
+      },
+      {
+        "id": "1781786640805",
+        "type": "todo",
+        "month": "m1",
+        "source": "insight",
+        "title": "Read the Board reports (last two sets) and the annual reports",
+        "notes": "This is to get a view of how performance of the programme is reported externally.",
+        "due": "2026-07-03",
+        "priority": true,
+        "done": false,
+        "created": "18 Jun 2026"
+      },
+      {
+        "id": "1781786238200",
+        "type": "followup",
+        "month": "m1",
+        "source": "insight",
+        "title": "Need to get sim card operational",
+        "notes": "Ask Keegan to connect the sim. RICA info was shared.",
+        "due": "2026-06-19",
+        "priority": false,
+        "done": true,
+        "created": "18 Jun 2026"
+      }
+    ]
+  }
+}
